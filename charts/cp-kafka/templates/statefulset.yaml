@@ -167,11 +167,17 @@ spec:
             mountPath: /opt/kafka/data-{{$k}}
           {{- end }}
         {{- end }}
+        {{- if .Value.cp-kafka.volumeMounts }}
+{{ .Values.cp-kafka.volumeMounts | indent 10 }}
+        {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
       {{- end }}
       volumes:
+      {{- if .Value.cp-kafka.volumes }}
+{{ .Values.cp-kafka.volumes | indent 8 }}
+      {{- end }}
       {{- if not .Values.persistence.enabled }}
       - name: datadir-0
         emptyDir: {}
