@@ -59,9 +59,9 @@ spec:
                     - {{ .Release.Name }}
               topologyKey: "kubernetes.io/hostname"
       {{- end }}
-      {{- if .Values.kafka.extraInitContainers }}
+      {{- if .Values.cp-kafka.extraInitContainers }}
       initContainers:
-      {{ .Values.kafka.extraInitContainers | indent 8 }}
+      {{ .Values.cp-kafka.extraInitContainers | indent 8 }}
       {{- end }}
       containers:
       {{- if .Values.prometheus.jmx.enabled }}
