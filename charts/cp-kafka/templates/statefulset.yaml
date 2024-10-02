@@ -61,7 +61,7 @@ spec:
       {{- end }}
       {{- if .Values.extraInitContainers }}
       initContainers:
-      {{ .Values.extraInitContainers | indent 8 }}
+{{ toYaml .Values.extraInitContainers | indent 6 }}
       {{- end }}
       containers:
       {{- if .Values.prometheus.jmx.enabled }}
@@ -167,16 +167,16 @@ spec:
             mountPath: /opt/kafka/data-{{$k}}
           {{- end }}
         {{- end }}
-        {{- if .Value.volumeMounts }}
-{{ .Values.volumeMounts | indent 10 }}
+        {{- if .Values.volumeMounts }}
+{{ toYaml .Values.volumeMounts | indent 10 }}
         {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
       {{- end }}
       volumes:
-      {{- if .Value.volumes }}
-{{ .Values.volumes | indent 8 }}
+      {{- if .Values.volumes }}
+{{ toYaml .Values.volumes | indent 6 }}
       {{- end }}
       {{- if not .Values.persistence.enabled }}
       - name: datadir-0
