@@ -59,6 +59,10 @@ spec:
                     - {{ .Release.Name }}
               topologyKey: "kubernetes.io/hostname"
       {{- end }}
+      {{- if .Values.extraInitContainers }}
+      initContainers:
+{{ toYaml .Values.extraInitContainers | indent 6 }}
+      {{- end }}
       containers:
       {{- if .Values.prometheus.jmx.enabled }}
       - name: prometheus-jmx-exporter
@@ -143,11 +147,17 @@ spec:
           mountPath: /var/lib/zookeeper/data
         - name: datalogdir
           mountPath: /var/lib/zookeeper/log
+        {{- if .Values.volumeMounts }}
+{{ toYaml .Values.volumeMounts | indent 10 }}
+        {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
       {{- end }}
       volumes:
+      {{- if .Values.volumes }}
+{{ toYaml .Values.volumes | indent 6 }}
+      {{- end }}
       {{ if not .Values.persistence.enabled }}
       - name: datadir
         emptyDir: {}
