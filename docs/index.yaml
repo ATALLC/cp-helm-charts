@@ -3,7 +3,7 @@ entries:
   cp-helm-charts:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.949084324-04:00"
+    created: "2024-10-24T12:00:28.604958803-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -34,14 +34,14 @@ entries:
       repository: file://./charts/cp-control-center
       version: 0.1.0
     description: A Helm chart for Confluent Platform Community Edition
-    digest: 66ba7f906f5536fdf9614e9ec5fcbf37aea9e0dd270d55521cfaced742843578
+    digest: a67e6acd0135a6a13900e6226153057cdbbee823756467756adbcf7e4351955b
     name: cp-helm-charts
     urls:
     - cp-helm-charts-0.6.2.tgz
     version: 0.6.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.945359054-04:00"
+    created: "2024-10-24T12:00:28.602048872-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -79,7 +79,7 @@ entries:
     version: 0.6.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.941245338-04:00"
+    created: "2024-10-24T12:00:28.598430139-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -117,7 +117,7 @@ entries:
     version: 0.6.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.936932614-04:00"
+    created: "2024-10-24T12:00:28.595428208-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -155,7 +155,7 @@ entries:
     version: 0.5.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.933288155-04:00"
+    created: "2024-10-24T12:00:28.592407773-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -193,7 +193,7 @@ entries:
     version: 0.4.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.929401276-04:00"
+    created: "2024-10-24T12:00:28.58817857-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -231,7 +231,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-22T18:19:32.925711136-04:00"
+    created: "2024-10-24T12:00:28.584858767-04:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -263,4 +263,4 @@ entries:
     urls:
     - cp-helm-charts-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-22T18:19:32.917784327-04:00"
+generated: "2024-10-24T12:00:28.577436451-04:00"
