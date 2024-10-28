@@ -147,6 +147,9 @@ spec:
           mountPath: /var/lib/zookeeper/data
         - name: datalogdir
           mountPath: /var/lib/zookeeper/log
+        - name: zk-jaas-config-volume
+          mountPath: "/etc/kafka/zk_jaas.conf"
+          subPath: "zk_jaas.conf"
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
