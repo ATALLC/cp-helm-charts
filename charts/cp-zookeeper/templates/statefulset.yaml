@@ -147,9 +147,6 @@ spec:
           mountPath: /var/lib/zookeeper/data
         - name: datalogdir
           mountPath: /var/lib/zookeeper/log
-      {{- if .Values.volumeMounts }}
-{{ toYaml .Values.volumeMounts | indent 10 }}
-        {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
