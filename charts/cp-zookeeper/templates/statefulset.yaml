@@ -143,12 +143,12 @@ spec:
           ZOOKEEPER_SERVERS=`echo $ZOOKEEPER_SERVERS | sed -e "$ZK_FIX_HOST_REGEX"` \
           /etc/confluent/docker/run
         {{- if .Values.volumeMounts }}
+{{ toYaml .Values.volumeMounts | indent 10 }}
         volumeMounts:
         - name: datadir
           mountPath: /var/lib/zookeeper/data
         - name: datalogdir
           mountPath: /var/lib/zookeeper/log
-{{ toYaml .Values.volumeMounts | indent 10 }}
         {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
